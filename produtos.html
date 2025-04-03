@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital@0;1&display=swap" rel="stylesheet">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const welcomeText = document.querySelector(".welcome h2");
+            welcomeText.style.opacity = 0;
+            welcomeText.style.transform = "translateY(-20px)";
+            setTimeout(() => {
+                welcomeText.style.transition = "opacity 1.5s ease-out, transform 1.5s ease-out";
+                welcomeText.style.opacity = 1;
+                welcomeText.style.transform = "translateY(0)";
+            }, 500);
+        });
+    </script>
+    <style>
+        body {
+            font-family: "Winky Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            background: linear-gradient(135deg, #dfeaf0, #A078D6);
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #50c6e4;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #110101;
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #faf9f9;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color:#130b11;
+        }
+        .welcome {
+            margin-top: 100px;
+            padding: 50px;
+        }
+        .welcome h2 {
+            font-size: 24px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .content {
+            max-width: 800px;
+            margin: 100px auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .content img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .product {
+            background: #fff;
+            padding: 15px;
+            margin: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mundo Pet</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="explicaçao.html">Explicação</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="welcome">
+        <h2>Conheça nossos produtos!</h2>
+    </section>
+
+    <section class="content">
+        <h2>Nossos Produtos</h2>
+        <div class="product-section">
+            <div class="product">
+                <img src="imagem/bolinhas.webp" alt="Acessório Pet">
+                <p>Bolinha para pet- R$20,00  <br><br>
+                    <button class="buy-button" onclick="adicionarAoCarrinho('Bolinha para pet', 20.00)">Comprar</button>
+            </div>
+            <div class="product">
+                <img src="imagem/brinquedo.avif"><br><br>
+                <p>Mordedor-15,00</p>
+                <button class="buy-button" onclick="adicionarAoCarrinho('Mordedor', 15.00)">Comprar</button>
+            </div>
+            <div class="product">
+                <img src="imagem/shampoo.webp" alt="Higiene Pet">
+                <p>Shampoo Pet - R$ 25,00</p>
+                <button class="buy-button" onclick="adicionarAoCarrinho('Shampoo Pet', 25.00)">Comprar</button>
+            </div>
+            <div class="product">
+                <img src="imagem/suplemento.avif" alt=""><br><br><br>
+                <p>Suplemento Vitamínico - R$ 40,00</p>
+                <button class="buy-button" onclick="adicionarAoCarrinho('Suplemento Vitamínico', 40.00)">Comprar</button>
+            </div>
+            
+            <div class="product-section">
+                <div class="product">
+                    <img src="imagem/pasta e ecova.webp" alt="Acessório Pet">
+                    <p>Creme dental e Escova- R$ 50,00</p>
+                    <button class="buy-button" onclick="adicionarAoCarrinho('Creme dental e Escova', 50.00)">Comprar</button>
+                </div>
+                
+                    <div class="product">
+                        <br><br>
+                        <img src="imagem/antipulgas.avif" alt="Acessório Pet">
+                        <p>Anti-Pulgas - R$ 100,00</p>
+                        <button class="buy-button" onclick="adicionarAoCarrinho('Anti-Pulgas ', 100.00)">Comprar</button>
+                        <script>
+                            function adicionarAoCarrinho(nome, preco) {
+                                alert(`Produto "${nome}" adicionado ao carrinho por R$ ${preco.toFixed(2)}!`);
+                                // Aqui você pode adicionar lógica para armazenar no localStorage ou enviar para um backend.
+                            }
+                            </script>
+                    </div>
+                    <script>
+                        function adicionarAoCarrinho(nome, preco) {
+                            alert(`Produto "${nome}" adicionado ao carrinho por R$ ${preco.toFixed(2)}!`);
+                            // Aqui você pode adicionar lógica para armazenar no localStorage ou enviar para um backend.
+                        }
+                        </script>
+        </div>
+
+
+    </section>
+</body>
+</html>

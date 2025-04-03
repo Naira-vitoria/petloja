@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explicação - Mundo Pet</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tableRows = document.querySelectorAll("table tr");
+            tableRows.forEach((row, index) => {
+                row.style.opacity = "0";
+                row.style.transform = "translateY(20px)";
+                setTimeout(() => {
+                    row.style.transition = "opacity 0.5s ease-in-out, transform 0.5s ease-in-out";
+                    row.style.opacity = "1";
+                    row.style.transform = "translateY(0)";
+                }, index * 200);
+            });
+            
+            // Animação do botão no formulário de contato
+            const contatoBtn = document.getElementById("contato-btn");
+            if (contatoBtn) {
+                contatoBtn.addEventListener("mouseover", function() {
+                    this.style.transform = "scale(1.1)";
+                    this.style.transition = "0.3s ease-in-out";
+                });
+                contatoBtn.addEventListener("mouseout", function() {
+                    this.style.transform = "scale(1)";
+                });
+            }
+
+            // Efeito de hover nos cards
+            const cards = document.querySelectorAll(".card");
+            cards.forEach(card => {
+                card.addEventListener("mouseover", function() {
+                    this.style.transform = "translateY(-5px)";
+                    this.style.transition = "0.3s ease-in-out";
+                });
+                card.addEventListener("mouseout", function() {
+                    this.style.transform = "translateY(0)";
+                });
+            });
+        });
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ddeffd;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #50c6e4;
+            padding: 20px;
+            color: rgb(15, 13, 13);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: rgb(255, 247, 247);
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            background-color: #a2c1ee;
+            padding: 15px;
+            margin: 15px auto;
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            color: rgb(15, 12, 12);
+        }
+        .styled-table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #7eb9ca;
+            color: rgb(27, 5, 5);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .styled-table th, .styled-table td {
+            border: 1px solid #180101;
+            padding: 10px;
+            text-align: left;
+        }
+        .styled-table th {
+            background-color: #86A1EF;
+            color: rgb(8, 22, 26);
+        }
+        .styled-table tr:nth-child(even) {
+            background-color: #4b4c81;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mundo Pet</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="contato.html">contatos</a></li>
+                <li><a href="explicaçao.html">Explicação</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="content">
+        <h2>O que é Servidor FTP, JavaScript e Docker?</h2>
+        <div class="card">
+            <p><strong>Servidor FTP:</strong> Um servidor FTP (File Transfer Protocol) é um servidor que permite a transferência de arquivos entre um cliente e um servidor através da internet ou rede local.</p>
+        </div>
+        <div class="card">
+            <p><strong>JavaScript:</strong> JavaScript é uma linguagem de programação usada para criar interatividade em páginas da web. Ele permite desde animações até a comunicação com servidores.</p>
+        </div>
+        <div class="card">
+            <p><strong>Docker:</strong> Docker é uma plataforma que permite criar, implantar e executar aplicativos em contêineres, garantindo mais portabilidade e eficiência.</p>
+        </div>
+    </section>
+
+    <section class="content">
+        <h2>Tecnologias e Linguagens</h2>
+        <table class="styled-table">
+            <tr>
+                <th>Tecnologia</th>
+                <th>Descrição</th>
+            </tr>
+            <tr>
+                <td>CSS</td>
+                <td>Usado para estilizar páginas web, permitindo a personalização de cores, layouts e animações.</td>
+            </tr>
+            <tr>
+                <td>JavaScript</td>
+                <td>Uma linguagem de programação usada para criar páginas interativas e dinâmicas.</td>
+            </tr>
+            <tr>
+                <td>Visual Studio Code</td>
+                <td>Ambiente de edição e programação de codigos.</td>
+            </tr>
+            <tr>
+                <td>GitHub</td>
+                <td>Plataforma de hospedagem de codigos e arquivos para qualquer pessoa .</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>Linguagem de marcação usada para estruturar o conteúdo das páginas web.</td>
+            </tr>
+        </table>
+    </section>
+</body>
+</html>
+</html>
